@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/trumf/contrast-toy/static/css/main.fed0ce66.css",
-    "main.js": "/trumf/contrast-toy/static/js/main.0a098e3d.js",
-    "static/js/787.cfa27c34.chunk.js": "/trumf/contrast-toy/static/js/787.cfa27c34.chunk.js",
-    "index.html": "/trumf/contrast-toy/index.html",
-    "main.fed0ce66.css.map": "/trumf/contrast-toy/static/css/main.fed0ce66.css.map",
-    "main.0a098e3d.js.map": "/trumf/contrast-toy/static/js/main.0a098e3d.js.map",
-    "787.cfa27c34.chunk.js.map": "/trumf/contrast-toy/static/js/787.cfa27c34.chunk.js.map"
+    "main.css": "/contrast-toy/static/css/main.fed0ce66.css",
+    "main.js": "/contrast-toy/static/js/main.2b552f7d.js",
+    "static/js/787.cfa27c34.chunk.js": "/contrast-toy/static/js/787.cfa27c34.chunk.js",
+    "index.html": "/contrast-toy/index.html",
+    "main.fed0ce66.css.map": "/contrast-toy/static/css/main.fed0ce66.css.map",
+    "main.2b552f7d.js.map": "/contrast-toy/static/js/main.2b552f7d.js.map",
+    "787.cfa27c34.chunk.js.map": "/contrast-toy/static/js/787.cfa27c34.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.fed0ce66.css",
-    "static/js/main.0a098e3d.js"
+    "static/js/main.2b552f7d.js"
   ]
 }
