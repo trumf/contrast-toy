@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/trumf/contrasttoy/static/css/main.fed0ce66.css",
+    "main.js": "/trumf/contrasttoy/static/js/main.d88606b6.js",
+    "static/js/787.cfa27c34.chunk.js": "/trumf/contrasttoy/static/js/787.cfa27c34.chunk.js",
+    "index.html": "/trumf/contrasttoy/index.html",
+    "main.fed0ce66.css.map": "/trumf/contrasttoy/static/css/main.fed0ce66.css.map",
+    "main.d88606b6.js.map": "/trumf/contrasttoy/static/js/main.d88606b6.js.map",
+    "787.cfa27c34.chunk.js.map": "/trumf/contrasttoy/static/js/787.cfa27c34.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.fed0ce66.css",
+    "static/js/main.d88606b6.js"
+  ]
+}
