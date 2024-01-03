@@ -181,6 +181,7 @@ function ForegroundColor({
           min="1"
           max="100"
           value={brightness}
+          aria-label="Brightness"
           onChange={onBrightnessChange}
         />
       </div>
@@ -195,6 +196,7 @@ function ForegroundColor({
           type="range"
           min="1"
           max="100"
+          aria-label="Saturation"
           value={saturation}
           onChange={onSaturationChange}
         />
