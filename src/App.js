@@ -56,7 +56,7 @@ export default function App() {
     <div className="App">
       <div className="colorDisplay" style={{ backgroundColor: bgColor }} />
       <div className="content">
-        <div className="Chartview" style={{ paddingBottom: "1rem" }}>
+        <div className="Chartview">
           <h1 style={{ color: isDarkColor(bgColor) ? "white" : "black" }}>
             Contrast Toy
           </h1>
@@ -83,8 +83,8 @@ export default function App() {
             />
           </div>
           <div className="BackgroundPicker">
-            <h2 style={{ textAlign: "center" }}>Background Color</h2>
-            <div className="DivChromePicker">
+            <h2>Background Color</h2>
+            <div className="divChromePicker">
               <BgColorPicker bgcolor={bgColor} onChange={handleBgColorChange} />
             </div>
           </div>
