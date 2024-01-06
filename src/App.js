@@ -263,6 +263,9 @@ function Chart({
   const [chartWidth, setChartWidth] = useState(
     window.innerWidth < 600 ? 300 : 500
   );
+  const [chartHeight, setChartHeight] = useState(
+    window.innerWidth < 600 ? 160 : 200
+  );
 
   useEffect(() => {
     // Update variables based on contrastModel
@@ -280,6 +283,7 @@ function Chart({
     // Handle window resize
     const handleResize = () => {
       setChartWidth(window.innerWidth < 600 ? 300 : 500);
+      setChartHeight(window.innerWidth < 600 ? 160 : 200);
     };
 
     window.addEventListener("resize", handleResize);
@@ -298,6 +302,7 @@ function Chart({
     okValue,
     yScaleMax,
     chartWidth,
+    chartHeight,
   ]);
 
   useEffect(() => {
@@ -316,13 +321,14 @@ function Chart({
     // Handle window resize
     const handleResize = () => {
       setChartWidth(window.innerWidth < 600 ? 300 : 500);
+      setChartHeight(window.innerWidth < 600 ? 160 : 200);
     };
 
     window.addEventListener("resize", handleResize);
 
     const margin = { top: 10, right: 30, bottom: 10, left: 20 };
     const width = chartWidth - margin.left - margin.right;
-    const height = 200 - margin.top - margin.bottom;
+    const height = chartHeight - margin.top - margin.bottom;
     const svg = select(chartRef.current);
 
     const tickColor = isDarkColor(bgColor) ? "white" : "black";
@@ -399,7 +405,7 @@ function Chart({
       style={{ backgroundColor: bgColor }}
       ref={chartRef}
       width={chartWidth}
-      height="200"
+      height={chartHeight}
     ></svg>
   );
 }
