@@ -1,12 +1,11 @@
 import "./App.css";
-import { ChromePicker } from "react-color";
-import { useState, useEffect, useRef } from "react";
-import { ratio as wcagRatio } from "get-contrast";
-import { APCAcontrast, sRGBtoY, displayP3toY, calcAPCA } from "apca-w3";
-import { colorParsley } from "colorparsley";
-import * as d3 from "d3";
-import { scaleBand, scaleLinear } from "d3-scale";
-import { select, axisLeft } from "d3";
+import {ChromePicker} from "react-color";
+import {useState, useEffect, useRef} from "react";
+import {ratio as wcagRatio} from "get-contrast";
+import {calcAPCA} from "apca-w3";
+import {colorParsley} from "colorparsley";
+import {scaleBand, scaleLinear} from "d3-scale";
+import {select, axisLeft} from "d3";
 
 export default function App() {
   const [bgColor, setBgColor] = useState("#ffffff");
@@ -54,10 +53,10 @@ export default function App() {
 
   return (
     <div className="App">
-      <div className="colorDisplay" style={{ backgroundColor: bgColor }} />
+      <div className="colorDisplay" style={{backgroundColor: bgColor}} />
       <div className="content">
         <div className="Chartview">
-          <h1 style={{ color: isDarkColor(bgColor) ? "white" : "black" }}>
+          <h1 style={{color: isDarkColor(bgColor) ? "white" : "black"}}>
             Contrast Toy
           </h1>
           <div className="Chart">
@@ -73,7 +72,7 @@ export default function App() {
         <div className="ColorPickers">
           <TabComponent onSelectModel={handleSelectModel} />
           <div className="Foreground">
-            <h2 style={{ textAlign: "center" }}>Foreground Color</h2>
+            <h2 style={{textAlign: "center"}}>Foreground Color</h2>
 
             <ForegroundColor
               saturation={fgSaturation}
@@ -103,17 +102,17 @@ function isDarkColor(color) {
   return false;
 }
 
-function wcagContrastRatio({ backgroundColor, brightness, saturation }) {
+function wcagContrastRatio({backgroundColor, brightness, saturation}) {
   const ratioArray = [];
   for (let hue = 0; hue < 360; hue += 1) {
     const hslColor = `hsl(${hue}, ${saturation}%, ${brightness}%)`;
     const contrast = wcagRatio(backgroundColor, hslColor);
-    ratioArray.push({ hue, contrast });
+    ratioArray.push({hue, contrast});
   }
   return ratioArray;
 }
 
-function apcaContrastRatio({ backgroundColor, brightness, saturation }) {
+function apcaContrastRatio({backgroundColor, brightness, saturation}) {
   const ratioArray = [];
   for (let hue = 0; hue < 360; hue += 1) {
     const hslColor = `hsl(${hue}, ${saturation}%, ${brightness}%)`;
@@ -122,13 +121,13 @@ function apcaContrastRatio({ backgroundColor, brightness, saturation }) {
       calcAPCA(colorParsley(hslColor), colorParsley(backgroundColor))
     );
 
-    ratioArray.push({ hue, contrast });
+    ratioArray.push({hue, contrast});
   }
 
   return ratioArray;
 }
 
-function TabComponent({ onSelectModel }) {
+function TabComponent({onSelectModel}) {
   const [activeTab, setActiveTab] = useState("WCAG");
 
   const handleTabClick = (tab) => {
@@ -154,7 +153,7 @@ function TabComponent({ onSelectModel }) {
   );
 }
 
-function BgColorPicker({ bgcolor, onChange }) {
+function BgColorPicker({bgcolor, onChange}) {
   return (
     <div onClick={(e) => e.stopPropagation()}>
       <ChromePicker color={bgcolor} onChange={onChange} disableAlpha={true} />
@@ -170,9 +169,9 @@ function ForegroundColor({
 }) {
   return (
     <div className="foregroundPicker">
-      <div style={{ alignSelf: "stretch" }}>
+      <div style={{alignSelf: "stretch"}}>
         <div>
-          <label style={{ marginRight: "1rem" }}>Brightness:</label>
+          <label style={{marginRight: "1rem"}}>Brightness:</label>
           {brightness}
         </div>
         <input
@@ -186,9 +185,9 @@ function ForegroundColor({
         />
       </div>
 
-      <div style={{ alignSelf: "stretch" }}>
+      <div style={{alignSelf: "stretch"}}>
         <div>
-          <label style={{ marginRight: "1rem" }}>Saturation:</label>
+          <label style={{marginRight: "1rem"}}>Saturation:</label>
           {saturation}
         </div>
         <input
@@ -202,48 +201,6 @@ function ForegroundColor({
         />
       </div>
     </div>
-  );
-}
-
-function ForegroundExamples({ fgSaturation, fgBrightness }) {
-  const exampleArray = [
-    { alt: "Red", hue: 0 },
-    { alt: "Orange", hue: 30 },
-    { alt: "Yellow", hue: 60 },
-    { alt: "Green", hue: 120 },
-    { alt: "Teal", hue: 190 },
-    { alt: "Blue", hue: 240 },
-    { alt: "Purple", hue: 270 },
-    { alt: "Pink", hue: 330 },
-    // You can choose any hue for gray, or omit it for a default gray
-  ];
-
-  return (
-    <div className="colorExamples">
-      {exampleArray.map((example) => (
-        <ColorExample
-          alt={example.alt}
-          hue={example.hue}
-          saturation={fgSaturation}
-          brightness={fgBrightness}
-          key={example.hue}
-        />
-      ))}
-    </div>
-  );
-}
-
-function ColorExample({ alt, hue, saturation, brightness }) {
-  const hslColor = `hsl(${hue}, ${saturation}%, ${brightness}%)`;
-
-  return (
-    <div
-      className="colorExample"
-      style={{
-        backgroundColor: hslColor,
-      }}
-      alt={alt}
-    ></div>
   );
 }
 
@@ -326,7 +283,7 @@ function Chart({
 
     window.addEventListener("resize", handleResize);
 
-    const margin = { top: 10, right: 30, bottom: 10, left: 20 };
+    const margin = {top: 10, right: 30, bottom: 10, left: 20};
     const width = chartWidth - margin.left - margin.right;
     const height = chartHeight - margin.top - margin.bottom;
     const svg = select(chartRef.current);
@@ -334,7 +291,7 @@ function Chart({
     const tickColor = isDarkColor(bgColor) ? "white" : "black";
 
     const xScale = scaleBand()
-      .domain(dataArray.map(({ hue }) => hue.toString()))
+      .domain(dataArray.map(({hue}) => hue.toString()))
       .range([0, width])
       .padding(0.1);
 
@@ -343,7 +300,7 @@ function Chart({
     // Clear existing chart elements
     svg.selectAll("*").remove();
 
-    const bars = svg
+    svg
       .append("g")
       .attr("transform", `translate(${margin.left},${margin.top})`)
       .selectAll(".bar")
@@ -398,11 +355,12 @@ function Chart({
     okValue,
     yScaleMax,
     chartWidth,
+    chartHeight,
   ]);
 
   return (
     <svg
-      style={{ backgroundColor: bgColor }}
+      style={{backgroundColor: bgColor}}
       ref={chartRef}
       width={chartWidth}
       height={chartHeight}
