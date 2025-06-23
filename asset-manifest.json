@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/contrast-toy/static/css/main.1ae45869.css",
-    "main.js": "/contrast-toy/static/js/main.2316473d.js",
+    "main.css": "/contrast-toy/static/css/main.cdd9f057.css",
+    "main.js": "/contrast-toy/static/js/main.7533d7f9.js",
     "index.html": "/contrast-toy/index.html",
-    "main.1ae45869.css.map": "/contrast-toy/static/css/main.1ae45869.css.map",
-    "main.2316473d.js.map": "/contrast-toy/static/js/main.2316473d.js.map"
+    "main.cdd9f057.css.map": "/contrast-toy/static/css/main.cdd9f057.css.map",
+    "main.7533d7f9.js.map": "/contrast-toy/static/js/main.7533d7f9.js.map"
   },
   "entrypoints": [
-    "static/css/main.1ae45869.css",
-    "static/js/main.2316473d.js"
+    "static/css/main.cdd9f057.css",
+    "static/js/main.7533d7f9.js"
   ]
 }
